@@ -10,7 +10,7 @@ function buildCate1thPage ($cate1th, $cate2thArr) {
 		implode(
 			' ',
 			array_map(
-				function ($cate2th) use ($cate1th) { return "[{$cate2th}](./pages/{$cate1th}-{$cate2th}.md)"; },
+				function ($cate2th) use ($cate1th) { return "[{$cate2th}](./{$cate1th}-{$cate2th}.md)"; },
 				$cate2thArr
 			)
 		)
