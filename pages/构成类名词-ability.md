@@ -1,0 +1,1 @@
+[ability](http://dict.youdao.com/w/eng/ability/#keyfrom=dict2.index) [sight](http://dict.youdao.com/w/eng/sight/#keyfrom=dict2.index) [intelligence](http://dict.youdao.com/w/eng/intelligence/#keyfrom=dict2.index) [memory](http://dict.youdao.com/w/eng/memory/#keyfrom=dict2.index) [skill](http://dict.youdao.com/w/eng/skill/#keyfrom=dict2.index)

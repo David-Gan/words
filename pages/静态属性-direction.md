@@ -1,0 +1,1 @@
+[direction](http://dict.youdao.com/w/eng/direction/#keyfrom=dict2.index) [east](http://dict.youdao.com/w/eng/east/#keyfrom=dict2.index) [weat](http://dict.youdao.com/w/eng/weat/#keyfrom=dict2.index) [north](http://dict.youdao.com/w/eng/north/#keyfrom=dict2.index) [south](http://dict.youdao.com/w/eng/south/#keyfrom=dict2.index)

@@ -1,0 +1,1 @@
+[power](http://dict.youdao.com/w/eng/power/#keyfrom=dict2.index) [authority](http://dict.youdao.com/w/eng/authority/#keyfrom=dict2.index)

@@ -1,0 +1,1 @@
+[performance](http://dict.youdao.com/w/eng/performance/#keyfrom=dict2.index) [concert](http://dict.youdao.com/w/eng/concert/#keyfrom=dict2.index) [drama](http://dict.youdao.com/w/eng/drama/#keyfrom=dict2.index) [opera](http://dict.youdao.com/w/eng/opera/#keyfrom=dict2.index)
