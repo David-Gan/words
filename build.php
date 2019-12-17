@@ -5,12 +5,26 @@ $cate1thArr = [];
 $cate2thArr = [];
 
 function buildCate1thPage ($cate1th, $cate2thArr) {
+	global $data;
+
 	file_put_contents(
 		__DIR__ . "/pages/{$cate1th}.md", 
 		implode(
 			' ',
 			array_map(
-				function ($cate2th) use ($cate1th) { return "[{$cate2th}](./{$cate1th}-{$cate2th}.md)"; },
+				function ($cate2th) use ($data, $cate1th) { 
+					$words = implode(
+						' ',
+						array_map(
+							function ($word) { 
+								return "[{$word}](http://dict.youdao.com/w/eng/{$word}/#keyfrom=dict2.index) ";
+							},
+							$data[$cate1th][$cate2th]
+						)
+					);
+
+					return "### {$cate2th}\n$words\n";
+				},
 				$cate2thArr
 			)
 		)
@@ -44,16 +58,16 @@ foreach ($lines as $line) {
 	$data [$cate1th] [$cate2th] = $words;
 
 
-	file_put_contents(
-		__DIR__ . "/pages/{$cate1th}-{$cate2th}.md",
-		implode(
-			' ',
-			array_map(
-				function ($word) { return "[{$word}](http://dict.youdao.com/w/eng/{$word}/#keyfrom=dict2.index)"; },
-				$words
-			)
-		)
-	);
+	// file_put_contents(
+	// 	__DIR__ . "/pages/{$cate1th}-{$cate2th}.md",
+	// 	implode(
+	// 		' ',
+	// 		array_map(
+	// 			function ($word) { return "[{$word}](http://dict.youdao.com/w/eng/{$word}/#keyfrom=dict2.index)"; },
+	// 			$words
+	// 		)
+	// 	)
+	// );
 }
 
 if ($cate2thArr) {

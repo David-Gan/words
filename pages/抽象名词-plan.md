@@ -1,1 +1,0 @@
-[plan](http://dict.youdao.com/w/eng/plan/#keyfrom=dict2.index) [strategy](http://dict.youdao.com/w/eng/strategy/#keyfrom=dict2.index) [policy](http://dict.youdao.com/w/eng/policy/#keyfrom=dict2.index) [program](http://dict.youdao.com/w/eng/program/#keyfrom=dict2.index)

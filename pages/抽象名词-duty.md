@@ -1,1 +1,0 @@
-[duty](http://dict.youdao.com/w/eng/duty/#keyfrom=dict2.index) [responsibility](http://dict.youdao.com/w/eng/responsibility/#keyfrom=dict2.index) [fault](http://dict.youdao.com/w/eng/fault/#keyfrom=dict2.index)

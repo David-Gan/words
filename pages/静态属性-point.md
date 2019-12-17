@@ -1,1 +1,0 @@
-[point](http://dict.youdao.com/w/eng/point/#keyfrom=dict2.index) [line](http://dict.youdao.com/w/eng/line/#keyfrom=dict2.index) [end](http://dict.youdao.com/w/eng/end/#keyfrom=dict2.index)
