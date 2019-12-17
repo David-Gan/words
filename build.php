@@ -4,6 +4,19 @@ $data = [];
 $cate1thArr = [];
 $cate2thArr = [];
 
+function buildCate1thPage ($cate1th, $cate2thArr) {
+	file_put_contents(
+		__DIR__ . "/pages/{$cate1th}.md", 
+		implode(
+			' ',
+			array_map(
+				function ($cate2th) use ($cate1th) { return "[{$cate2th}](./pages/{$cate1th}-{$cate2th}.md)"; },
+				$cate2thArr
+			)
+		)
+	);
+}
+
 $txt = file_get_contents(__DIR__ . '/noun.txt');
 $lines = explode("\n", $txt);
 foreach ($lines as $line) {
@@ -12,20 +25,11 @@ foreach ($lines as $line) {
 
 	if (strpos($line, ' ') === false) {
 		if ($cate2thArr) {
-			file_put_contents(
-				__DIR__ . "/pages/{$cate1th}.md", 
-				implode(
-					' ',
-					array_map(
-						function ($word) { return "[{$word}](/pages/{$cate1th}-{$word}.md)"; },
-						$cate2thArr
-					)
-				)
-			);
+			buildCate1thPage($cate1th, $cate2thArr);
 		}
 
 		$cate1thArr[] = $cate1th = $line;
-		$data [$cate1th] = [];
+		$data [$cate1th] = $cate2thArr = [];
 		continue;
 	}
 
@@ -52,6 +56,10 @@ foreach ($lines as $line) {
 	);
 }
 
+if ($cate2thArr) {
+	buildCate1thPage($cate1th, $cate2thArr);
+}
+
 
 
 file_put_contents(
@@ -59,12 +67,12 @@ file_put_contents(
 	implode(
 		' ',
 		array_map(
-			function ($word) { return "[{$word}](/pages/{$word}.md)"; },
+			function ($word) { return "[{$word}](./pages/{$word}.md)"; },
 			$cate1thArr
 		)
 	)
 );
 
-print_r($data);
+// print_r($data);
 
 
