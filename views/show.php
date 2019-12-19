@@ -8,9 +8,17 @@ foreach ($lines as $line) {
 
 	if (substr($line, 0, 1) === '-') {
 		$line = substr($line, 1);
+		$line = trim($line);
 		$content .= '<p><a class="source" target="_blank" href="' . $line . '">' . $line . '</a></p>';
 	} else {
-		$content .= '<p><a href="' . $url . urlencode($line) . '">' . $line . '</a></p>';	
+		$words = array_map(function ($word) {
+			$url = 'https://dict.eudic.net/mdicts/en/' . $word;
+			return '<a href="' . $url . '">' . $word . '</a>';
+		}, explode(' ', $line));
+
+		$sentence = '<a class="sentence" href="' . $url . urlencode($line) . '">-S</a>';
+
+		$content .= '<p>' . implode(' ', $words) . ' ' . $sentence . '</p>';	
 	}
 }
 ?>
@@ -20,6 +28,10 @@ foreach ($lines as $line) {
 	}
 	.container .source {
 		color: #aaa;
+	}
+	.container .sentence {
+		color: #aaa;
+		margin-left: 0.5rem;
 	}
 </style>
 <div class="container" style="margin-top:20px;">
