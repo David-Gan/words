@@ -1,15 +1,19 @@
 <?php
+$config = [
+	'account' => [
+		'username' => 'admin',
+		'password' => 'admin'
+	]
+];
+
+@ include(__DIR__ . '/config.php');
+
 session_start();
 $action = & $_GET['action'];
 
 $isLogin = ! empty($_SESSION['user']);
 if (! $isLogin) {
-	$token = [
-		'username' => 'ganmu',
-		'password' => '13311221'
-	];
-
-	if ($action === 'login' && $_POST === $token) {
+	if ($action === 'login' && $_POST === $config['account']) {
 		$_SESSION['user'] = 'ganmu';
 	} else {
 		view('login');
