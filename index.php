@@ -19,6 +19,8 @@ $isLogin = ! empty($_SESSION['user']);
 if (! $isLogin) {
 	if ($action === 'login' && $_POST === $config['account']) {
 		$_SESSION['user'] = 'ganmu';
+		header("Location:/");
+		exit();
 	} else {
 		view('login');
 	}
