@@ -9,8 +9,9 @@ $config = [
 @ include(__DIR__ . '/config.php');
 
 $lifetime = 60 * 60 * 48;
+ini_set("session.cookie_lifetime", $lifetime);
 session_set_cookie_params($lifetime);
-session_start(); 
+session_start();
 setcookie(session_name(), session_id(), time() + $lifetime);
 
 $action = & $_GET['action'];
