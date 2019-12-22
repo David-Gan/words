@@ -6,8 +6,7 @@ foreach ($lines as $line) {
 	$line = trim($line);
 	if (empty($line)) continue;
 
-	if (substr($line, 0, 1) === '-') {
-		$line = substr($line, 1);
+	if (in_array(strtolower(substr($line, 0, 6)), ['http:/', 'https:'])) {
 		$line = trim($line);
 		$content .= '<p><a class="source" target="_blank" href="' . $line . '">' . $line . '</a></p>';
 	} else {
