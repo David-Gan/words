@@ -10,9 +10,10 @@ foreach ($lines as $line) {
 		$line = trim($line);
 		$content .= '<p><a class="source" target="_blank" href="' . $line . '">' . $line . '</a></p>';
 	} else {
-		$words = array_map(function ($word) {
+		$words = array_map(function ($text) {
+			list($startChars, $word, $endChars) = explode(' ', preg_replace('/(\W*)(\w+)(\W*)$/', '${1} ${2} ${3}', $text));
 			$url = 'https://dict.eudic.net/mdicts/en/' . $word;
-			return '<a href="' . $url . '">' . $word . '</a>';
+			return $startChars . '<a href="' . $url . '">' . $word . '</a>' . $endChars;
 		}, explode(' ', $line));
 
 		$sentence = '<a class="sentence" href="' . $url . urlencode($line) . '">-S</a>';
