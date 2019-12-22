@@ -56,3 +56,7 @@ function view ($tpl, $_data = []) {
 	require __DIR__ . '/views/layout.php';
 	die();
 }
+
+function isUrl ($text) {
+	return in_array(strtolower(substr($text, 0, 6)), ['http:/', 'https:']);
+}
