@@ -61,7 +61,8 @@ foreach ($lines as $line) {
 		color: black;
 	}
 	.container .source {
-		color: #aaa;
+		background-color: gray;
+		color: white;
 	}
 	.container .sentence {
 		color: #aaa;
