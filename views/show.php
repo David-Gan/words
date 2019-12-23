@@ -17,7 +17,11 @@ foreach ($lines as $line) {
 			}
 
 			$matches = [];
-			preg_match_all('/([a-z]+)/i', $text, $matches, PREG_OFFSET_CAPTURE);
+			$count = preg_match_all('/([a-z]+)/i', $text, $matches, PREG_OFFSET_CAPTURE);
+			if (! $count) {
+				return $text;
+			}
+
 			$matches = $matches[0];
 
 			$html = '';
