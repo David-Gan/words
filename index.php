@@ -27,19 +27,36 @@ if (! $isLogin) {
 	}
 }
 
-$dataFile = __DIR__ . '/data.txt';
+$sentencesFile = __DIR__ . '/data/sentences.txt';
+$wordsFile = __DIR__ . '/data/words.txt';
+
 switch ($action) {
-	case 'edit':
-		$content = file_exists($dataFile) ? file_get_contents($dataFile) : '';
-		view('edit', ['content' => $content]);
+	case 'edit-words':
+		$content = file_exists($wordsFile) ? file_get_contents($wordsFile) : '';
+		view('edit', ['content' => $content, 'action' => 'update-words']);
 		break;
-	case 'update':
+	case 'edit-sentences':
+		$content = file_exists($sentencesFile) ? file_get_contents($sentencesFile) : '';
+		view('edit', ['content' => $content, 'action' => 'update-sentences']);
+		break;
+	case 'update-words':
 		$content = & $_POST['content'];
-		file_put_contents($dataFile, $content);
+		file_put_contents($wordsFile, $content);
+		break;
+	case 'update-sentences':
+		$content = & $_POST['content'];
+		file_put_contents($sentencesFile, $content);
+		break;
+	case 'words':
+		$data = file_exists($wordsFile) ? file_get_contents($wordsFile) : '';
+		view('show', ['data' => $data, 'action' => 'edit-words']);
+		break;
+	case 'sentences':
+		$data = file_exists($sentencesFile) ? file_get_contents($sentencesFile) : '';
+		view('show', ['data' => $data, 'action' => 'edit-sentences']);
 		break;
 	default:
-		$data = file_exists($dataFile) ? file_get_contents($dataFile) : '';
-		view('show', ['data' => $data]);
+		header("Location:/?action=sentences");
 		break;
 }
 

@@ -70,6 +70,8 @@ foreach ($lines as $line) {
 	}
 </style>
 <div class="container" style="margin-top:20px;">
-	<p style="text-align: right;"><a href="/?action=edit">EDIT</a></p>
+	<p style="text-align: right;">
+		<a href="/?action=<?=$action?>">Edit</a>
+	</p>
 	<?=$content?>
 </div>

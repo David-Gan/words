@@ -9,8 +9,9 @@ $(function () {
 	resizeEdit();
 
 	var saveContentTask = null;
+	var url = $('#form').attr('action');
 	function saveContent () {
-		$.post('/?action=update', {
+		$.post(url, {
 			content: $('#edit').val()
 		});
 		saveContentTask = null;
