@@ -57,19 +57,19 @@ foreach ($lines as $line) {
 }
 ?>
 <style type="text/css">
-	.container a {
+	#main a {
 		color: black;
 	}
-	.container .source {
+	#main .source {
 		background-color: gray;
 		color: white;
 	}
-	.container .sentence {
+	#main .sentence {
 		color: #aaa;
 		margin-left: 0.5rem;
 	}
 </style>
-<div class="container" style="margin-top:20px;">
+<div class="container" id="main" style="margin-top:20px;">
 	<p style="text-align: right;">
 		<a href="/?action=<?=$action?>">Edit</a>
 	</p>
