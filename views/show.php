@@ -61,7 +61,7 @@ foreach ($lines as $line) {
 <style type="text/css">
 	#main a {
 		color: black;
-		word-break: break-all;
+		word-break: break-word;
 	}
 	#main .source {
 		background-color: gray;
