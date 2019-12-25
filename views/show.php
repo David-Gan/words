@@ -10,6 +10,8 @@ foreach ($lines as $line) {
 	if (isUrl($line)) {
 		$line = trim($line);
 		$content .= '<p><a class="source" target="_blank" href="' . $line . '">' . $line . '</a></p>';
+	} elseif ($line === '-') {
+		$content .= '<hr />';
 	} else {
 		$words = array_map(function ($text) {
 			if (isUrl($text)) {
@@ -59,6 +61,7 @@ foreach ($lines as $line) {
 <style type="text/css">
 	#main a {
 		color: black;
+		word-break: break-all;
 	}
 	#main .source {
 		background-color: gray;
